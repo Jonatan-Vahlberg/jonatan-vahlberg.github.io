@@ -1,49 +1,111 @@
+*{
+    margin: 0;
+    padding: 0;
+}
 html, body{
     margin: 0px;
     padding: 0px;
     height: 100%;
     width:100%;
-    overflow-x: hidden
-}
-body{
-    background-color: #000000;
+    overflow-x: hidden;
+    background-color: #d0e2f2;
 }
 
 
 /*HEADER*/
-header{
-    height:9%;
+nav{
+    height:60px;
     width:100%;
-    background-color: #69828c;
+    background-color: transparent;
     color:#fff;
-    border-bottom: #000 3px solid;
+    z-index: 9999;
+    
+    
 }
-header .branding h1{
+nav > .branding h1{
     margin:0px;
     padding: 10px 0px 20px 10px;
     color:#fff;
-    float:left; 
+    text-shadow: #000 2px 2px;
+    float:left;
+    font-size: 40px; 
 }
-header nav{
-    float:right;
-    padding: 10px 10px 20px 0px;
+
+nav > #links{
+    list-style: none;
+    position: absolute;
+    top:0px;
+    right:0px;
+    padding: 25px;
+    display: inline-block;    
+}
+nav > #links > li, nav > .branding{
+   display: inline-block;
+}
+#links > li{
+    padding: 0 15px;
+    font-size: 20px;
+}
+#links >li a:link{
+    color: #fff;
+    text-decoration: none;
+}
+#links >li a:hover{
+    color: #fff;
+    font-weight: bold;
+}
+#links >li a:visited{
+    color: #fff;
+}
+nav #links.visible > li{
+    display: block;
+    padding-right: 0px;
+    margin-top: 0px;
+    font-size: 20px;
+
+}
+
+nav #links.visible{
+    background: rgba(0, 0, 0, 0.7);
+    height: 100%;
+    width:100%;
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+#ham,#ex{
+    position: absolute;
+    padding: 25px;
+    display: none;
+    top: 0;
+    right:0;
 }
 /*BANNER*/
-section{
+#indexBanner{
+    background-size: cover;
+    background-position: center bottom;
+    height: 450px;
     width:100%;
-    height: 400px;
+    color:#fff;
+    position: relative;
     background: url("./images/winter.jpeg") no-repeat 0 -440px;
     border-bottom: #000 3px solid;
     
 }
-section h1{
+#indexBanner >#heroText > h1{
     font-size: 55px;
     margin-top: 0%;
     padding-top: 150px;
     position: relative;
     text-align: center;
+    text-shadow: #000 2px 2px;
 }
-section p{
+#indexbanner > #heroText.visible{
+    display: none;
+}
+#indexBanner > #heroText > p{
     margin:0 auto;
     width: 40%;
     font-size: 18px;
@@ -53,13 +115,181 @@ section p{
 }
 
 /*ARTICLE*/
-article{
+article,aside{
+    float:left;
+    background-color: #d0e2f2;
+    font-family:'Montserrat', sans-serif;
+    width:100%;
+    
+    text-align:center;
+   
+    
+}
+article > img,
+article > div {
+    padding: 60px 0px 30px 20px;
+}
+article > p,
+article > h2,
+article > .fbox-y{
+    padding: 0px 0px 10px 20px;
+
+}
+article p{
+    font-weight: bold;
+}
+article img{
+    width:30%;
+    border-radius: 50%;
+}
+div{
+    margin:0;
+}
+article > .fbox-y{
+    margin-left: 45%;
+    text-decoration: none;
+    width:30%;
+    text-align: left;
+   
+}
+.fbox-y a:link{
+    color:#000;
+}
+.fbox-y a:hover{
+    color:#000;
+    font-weight: bold;
+    text-decoration: underline;
+}
+.fbox-y a:visited{
+    color:#000;
+}
+.fbox-y li[title="git"]{
+    list-style-image: url(./images/git.png);
+}
+.fbox-y li[title="linked"]{
+    list-style-image: url(./images/linked.png);
+}
+.fbox-y li[title="scout"]{
+    list-style-image: url(./images/lis.png);
+}
+/*ASIDE*/
+aside{
+    width: 100%;
+    
+    text-align: center; 
+    
+}
+/*ASIDE CURRENT*/
+
+aside #currentProjects{
+    background-color: #fff;
+    width:60%;
+    height: 30%;
+    border: #000 3px solid;
+    margin: 0 auto 2% auto ;
+}
+
+#currentProjects > li{
+    text-align: left;
+    list-style: none;
+}
+aside a:link{
+    color:rgb(0, 0, 0);
+    text-decoration: none;
+}
+aside a:hover{
+    color:rgb(0, 0, 0);
+    font-weight: bold;
+    text-decoration: underline;
+}
+aside a:visited{
+    color:rgb(0, 0, 0);
+}
+/*ASIDE PAST*/
+aside #pastProjects{
+    margin: 0 auto 2% auto ;
+    width:60%;
+    background-color: #fff;
+    height: 50%;
+    border: #000 3px solid;
+    overflow-y: scroll;
+}
+aside > #pastProjects > ol{
+    padding: 20px 0px 0px 20px; 
+    text-align: left;
+    list-style: decimal;
+}
+
+/*Footer*/
+
+footer{
+    border-top: #000 3px solid;
+    height: 5%;
+    width:100%;
+    background-color: #69828c;
+    color: #fff;
+}
+footer a:link, footer a:visited, footera:hover{
+    color:#fff;
+}
+footer a:hover{
+    font-weight: bold;
+}
+footer p{
+    margin:0px;
+}
+@media(max-width:780px){
+    #indexBanner #ham{
+        display: initial;
+    }
+    #ham, #ex{
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 20px 20px;
+        z-index: 99;
+    
+    }
+
+    nav > .branding h1{
+       
+        font-size: 30px; 
+    }
+    nav > #links{
+        display: none;
+    }
+
+    article,aside{
+        width: 100%;
+    }
+    article > img{
+        width: 75%;
+    }
+    aside{
+        min-height: 10%;
+    }
+
+    aside #pastProjects, aside #currentProjects{
+        width:90%;
+    }
+    footer{
+        text-align: center;
+    }
+}
+
+/* #93aeb5 – 
+    #d0e2f2 – Background 
+    #69828c – header
+    #038c8c – aside
+    #121314 – */
+
+    /*article{
     background-color:  #038c8c;
     float:left;
-    width: 49%;
+    width: 59%;
     height:100%;
     color:#fff;
-    border-right:  #000 2px solid;
+    
     text-align: center;
     font-family:'Montserrat', sans-serif;  
 }
@@ -123,12 +353,12 @@ article .fbox-y{
 }
 
 /*ASIDE*/
-aside{
+/*aside{
     float: right;
     background-color: #d0e2f2;
     border-left:  #000 2px solid;
     float:right;
-    width: 49%;
+    width: 50%;
     height: 100%;
     padding-left: 10px;
     text-align: center; 
@@ -164,20 +394,4 @@ aside a:hover{
 }
 aside a:visited{
     color:rgb(0, 0, 0);
-}
-
-footer{
-    border-top: #000 3px solid;
-    height: 5%;
-    width:100%;
-    background-color: #69828c;
-}
-footer p{
-    margin:0px;
-}
-
-/* #93aeb5 – 
-    #d0e2f2 – Background 
-    #69828c – header
-    #038c8c – aside
-    #121314 – */
+}*/
