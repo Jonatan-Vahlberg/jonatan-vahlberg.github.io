@@ -1,0 +1,49 @@
+Zombies and Cats Information relating to rendering and general design desicissons
+START:
+	General: X_Min: 190 y_min: 85 
+	Mat: x_Max: 325 y_Max: 300
+	Sign: x_Max: 325	y_Max: 300
+	Controller: x_Max: 384	y_Max: 360
+House:
+	cloud: y: 10 x_Max: 300
+	house: y: 78 x_Max: 300
+	Lampost: y: 56 x_Max 340
+Lake:
+	2x Fish: y_Min: 135 y_Max: 368 x_Max: 365
+	Boat: y_Min: 135 Y_Max: 272 x_Max: 250
+Forrest and Dead forrest:
+	General: y_Min: 170
+	Sanke: y_Max: 368 x_Max: 350
+	Mushroom: y_Max: 355 x_Max: 380
+	Stone: y_Max: 325 x_Max: 350
+Backyard:
+	Hole: y_Min: 150 y_Max: 325  x_Min: 100 x_Max: 245
+	woodpile: y_Min: 236 y_Max: 300  x_Max: 325
+	bucket: y_min: 236 y_Max: 355 x_Max: 380
+Plain:
+	Sun: y_Max: 51 x_Max: 325
+	Cloud: y_Max: 51 x_Max: 300
+	Tree: y: 205 x_Max: 275
+Road:
+	signpost: y_Max: 10  x_Min: 335 x_Max: 325
+	sign: y_Min: 160 y_Max: 300 x_Max:325
+	Stone: y_Max: 325 x_Max: 350
+Tavern:
+	Liquer: y: 160  x_Max: 380
+	Poster 1: y: 245 x: 35
+	Poster 2: y: 245 x: 165 width: 95
+	Poster 3: y: 245 x: 300 	
+	Bar Stool: y: 220 x_Max: 345
+Cemetary:
+	Rose: y: 210 x_Max: 365
+	Gravelight: y: 210 x_Max: 345
+	Stone: y: 255 x_Max: 350
+Tavern inside:
+	general: y_min: 150 x_Min: 145
+	grate: y_Max: 300 x_Max: 325
+	Barstool: y_Max: 220 x_Max: 345
+	barrel:  y_Max: 250 x_Max: 335
+ESCAPE:
+	Lock: x: 223 Y_Min: 90 Y_Max: 261
+	Zombie: Y: 300
+	Safe: x_Max: 95 Y_Min: 85 Y_Max: 218

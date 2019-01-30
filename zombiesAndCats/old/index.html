@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- Stylesheets first one is for the cat icon and non editable second one is the i folder stylesheet-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+<body>
+    <!-- Over arching game area -->
+    <div class="gameArea">
+        <!-- Area for graphics rendering -->
+        <div class="canvasArea">
+            <!-- Canvas element for rendering the graphics on given height and width in HTML to prevent streching as will happen if you try and set height and with in CSS 
+            Size based on a standard large mobile phone in chrome-->
+            <canvas id="canvas" height="400" width="425"></canvas>
+        </div>
+        <!-- The area to take in input will dynamically change during runtime to fit the board-->
+        <div class="controllArea">
+            <button class="input" id="UP">UP</button>
+            <div class="scoreDiv">
+                <!-- Tells the score of the player-->
+                <i class="fas fa-cat"></i> <p class="score"> Cats Saved: </p>
+            </div>
+            <!-- They are given the class of input to mass target and run over each in a forEachloop -->
+            <button class="input" id="LEFT">LEFT</button>
+            <button class="input" id="MISC">START</button>
+            <button class="input" id="RIGHT">RIGHT</button>
+            <button class="input" id="DOWN">DOWN</button>
+            
+        </div>
+        <div class="dataArea">
+            <!-- All of theese dots are for the radars to work without having to load during runtime I found this to be the easiest one to do -->
+            <div id="zombieRadar">
+                <img src="./media/sprites/redDot.png" alt="" class="zDot zeroY zeroX">
+                <img src="./media/sprites/redDot.png" alt="" class="zDot zeroY oneX">
+                <img src="./media/sprites/redDot.png" alt="" class="zDot zeroY twoX">
+                <img src="./media/sprites/redDot.png" alt="" class="zDot zeroY threeX">
+                <img src="./media/sprites/redDot.png" alt="" class="zDot zeroY fourX">
+                <img src="./media/sprites/redDot.png" alt="" class="zDot oneY zeroX">
+                <img src="./media/sprites/redDot.png" alt="" class="zDot oneY oneX">
+                <img src="./media/sprites/redDot.png" alt="" class="zDot oneY twoX">
+                <img src="./media/sprites/redDot.png" alt="" class="zDot oneY threeX">
+                <img src="./media/sprites/redDot.png" alt="" class="zDot oneY fourX">
+                <img src="./media/sprites/redDot.png" alt="" class="zDot twoY zeroX">
+                <img src="./media/sprites/redDot.png" alt="" class="zDot twoY oneX">
+                <img src="./media/sprites/redDot.png" alt="" class="zDot twoY twoX">
+                <img src="./media/sprites/redDot.png" alt="" class="zDot twoY threeX">
+                <img src="./media/sprites/redDot.png" alt="" class="zDot twoY fourX">
+                <img src="./media/sprites/redDot.png" alt="" class="zDot threeY zeroX">
+                <img src="./media/sprites/redDot.png" alt="" class="zDot threeY oneX">
+                <img src="./media/sprites/redDot.png" alt="" class="zDot threeY twoX">
+                <img src="./media/sprites/redDot.png" alt="" class="zDot threeY threeX">
+                <img src="./media/sprites/redDot.png" alt="" class="zDot threeY fourX">
+                <img src="./media/sprites/redDot.png" alt="" class="zDot fourY zeroX">
+                <img src="./media/sprites/redDot.png" alt="" class="zDot fourY oneX">
+                <img src="./media/sprites/redDot.png" alt="" class="zDot fourY twoX">
+                <img src="./media/sprites/redDot.png" alt="" class="zDot fourY threeX">
+                <img src="./media/sprites/redDot.png" alt="" class="zDot fourY fourX">
+            </div>
+
+            <div id="catRadar">
+                    <img src="./media/sprites/yellowDot.png" alt="" class="cDot zeroY zeroX">
+                    <img src="./media/sprites/yellowDot.png" alt="" class="cDot zeroY oneX">
+                    <img src="./media/sprites/yellowDot.png" alt="" class="cDot zeroY twoX">
+                    <img src="./media/sprites/yellowDot.png" alt="" class="cDot zeroY threeX">
+                    <img src="./media/sprites/yellowDot.png" alt="" class="cDot zeroY fourX">
+                    <img src="./media/sprites/yellowDot.png" alt="" class="cDot oneY zeroX">
+                    <img src="./media/sprites/yellowDot.png" alt="" class="cDot oneY oneX">
+                    <img src="./media/sprites/yellowDot.png" alt="" class="cDot oneY twoX">
+                    <img src="./media/sprites/yellowDot.png" alt="" class="cDot oneY threeX">
+                    <img src="./media/sprites/yellowDot.png" alt="" class="cDot oneY fourX">
+                    <img src="./media/sprites/yellowDot.png" alt="" class="cDot twoY zeroX">
+                    <img src="./media/sprites/yellowDot.png" alt="" class="cDot twoY oneX">
+                    <img src="./media/sprites/yellowDot.png" alt="" class="cDot twoY twoX">
+                    <img src="./media/sprites/yellowDot.png" alt="" class="cDot twoY threeX">
+                    <img src="./media/sprites/yellowDot.png" alt="" class="cDot twoY fourX">
+                    <img src="./media/sprites/yellowDot.png" alt="" class="cDot threeY zeroX">
+                    <img src="./media/sprites/yellowDot.png" alt="" class="cDot threeY oneX">
+                    <img src="./media/sprites/yellowDot.png" alt="" class="cDot threeY twoX">
+                    <img src="./media/sprites/yellowDot.png" alt="" class="cDot threeY threeX">
+                    <img src="./media/sprites/yellowDot.png" alt="" class="cDot threeY fourX">
+                    <img src="./media/sprites/yellowDot.png" alt="" class="cDot fourY zeroX">
+                    <img src="./media/sprites/yellowDot.png" alt="" class="cDot fourY oneX">
+                    <img src="./media/sprites/yellowDot.png" alt="" class="cDot fourY twoX">
+                    <img src="./media/sprites/yellowDot.png" alt="" class="cDot fourY threeX">
+                    <img src="./media/sprites/yellowDot.png" alt="" class="cDot fourY fourX">
+            </div>
+            
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>

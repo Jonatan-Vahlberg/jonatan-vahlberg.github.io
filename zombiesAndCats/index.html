@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+<body>
+    <header><img id="header" src="media/sprites/title_normal.gif" alt=""></header>
+    <main id="menu">
+        <button class="input startGame">START GAME</button><br>
+        
+        <div class="info story">
+                <button class="input story">THE STORY</button><br>
+            <div class="inside inStory">
+                <p>Madeline and her parents were moving towards the safezone south of they're house as did all the other pepole of the they're samll town. 
+                   Both of her parents had they're hands full of clothes and necessities  while Madeline had a small backpack and trailing  behind her a small wagon
+                   filled with cat food and ofcourse her three kittens in they're collective cage. <br></p>
+
+                <p>As they neared the safezone the road was packed with people and at the end of the road a steel fence, fencing of the safezone and behind the fence 
+                    the military run camp. But as Madeline took a few more steps she noticed that the wagon she had been dragging felt lighter. As she turned around 
+                    the cage was open. First the panic set in but then after almost starting to cry, she had made a comittment to her parents to take care of the cats,
+                    standing still for a moment she turned and ran home hoping despratly that her kittens had returned to their house. But as Madeline reached her living room
+                    no cat could be found. Madeline turned prepared to leave, braving the undead masses that had started gathering outside.</p>
+            </div>
+        </div>
+        <div class="info about">
+            <button class="input about">ABOUT THE GAME</button>
+            <div class="inside inAbout">
+                <p>The purpose of this game is for Madeline to collect her three kittens while avoiding zombies. In style with classic adventure games you can move in 
+                    four cardinal directions: Up/North Down/South Right/East Left/West. The game takes place in a remote mountain town and features 10+ diffrent scenes 
+                    all with original art assets. Inorder to collect the cats you have two primary items to use a green zombie radar and a yellow cat radar the zombie 
+                    radar tells you if a zombie is within a certain proximity to the player while all zombies moves after the player the cats remain statonary. As you 
+                    collect a cat another zombie gets up and starts walking towards you the game gets progressvly harder. To the south of the starting point is a safezone 
+                    which is the goal for the game get all the cats and bring Madeline to the safezone, sound simple right?...Well good luck.</p>
+                    <p><br>By Jonatan Vahlberg</p>
+            </div>
+
+        </div>        
+    </main>
+    <script>
+        const storyButton = document.querySelector('.input.story');
+        const aboutButton = document.querySelector('.input.about');
+        const startButton = document.querySelector('.input.startGame');
+        const story = document.querySelector('.inside.inStory');
+        story.style.display = 'none';
+        const about = document.querySelector('.inside.inAbout');
+        about.style.display = 'none';
+
+        function showStory(){
+            console.log(story.style.display);
+            if(story.style.display == 'none'){
+                story.style.display = 'initial'
+            }else{
+                story.style.display = 'none';
+            }
+        }
+        function showAbout(){
+            console.log(about.style.display);
+            if(about.style.display == 'none'){
+                about.style.display = 'initial'
+            }else{
+                about.style.display = 'none';
+            }
+        }
+
+        storyButton.addEventListener('click',showStory)
+        aboutButton.addEventListener('click',showAbout)
+        startButton.addEventListener('click',() =>{
+            window.location = 'game.html'
+        });
+    </script>
+</body>
+</html>
